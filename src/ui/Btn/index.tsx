@@ -10,6 +10,7 @@ const Btn: FC<IBtn> = ({
   isIcon = false,
   isTransparent,
   children,
+  isDisabled = false,
   onClick
 }) => {
   const btnClassName = cx(
@@ -25,6 +26,7 @@ const Btn: FC<IBtn> = ({
     <button
       className={btnClassName}
       type={type}
+      disabled={isDisabled}
       onClick={onClick}
     >
       { text }

@@ -7,5 +7,6 @@ export interface IBtn {
   isTransparent?: boolean
   isIcon?: boolean
   children?: ReactNode
+  isDisabled?: boolean
   onClick?: (evt: any) => void
 }

@@ -20,6 +20,12 @@
   transition-property: border-color, background-color, color;
   cursor: pointer;
 
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+  }
+
   @media (hover: hover), screen and (min-width: 0\0) {
     &:hover,
     &:focus {

@@ -3,7 +3,8 @@ import { RootState } from '..'
 
 export enum ModalName {
   IMPORT = 'IMPORT',
-  CHARACTER_FORM = 'CHARACTER_FORM'
+  CHARACTER_FORM = 'CHARACTER_FORM',
+  MESSAGE = 'MESSAGE'
 }
 
 export interface ModalsState {

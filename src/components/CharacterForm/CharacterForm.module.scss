@@ -1,5 +1,12 @@
 @import '../../styles/variables';
 
+.characterForm {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .list {
   margin: 0;
   padding: 0;
@@ -37,4 +44,9 @@
     border: 1px solid rgba($color-black-russian, 0.2);
     border-radius: 8px;
   }
+}
+
+.submit {
+  margin-top: 25px;
+  align-self: flex-end;
 }

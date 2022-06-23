@@ -19,10 +19,6 @@
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
-
     .wrapper {
         position: relative;
 

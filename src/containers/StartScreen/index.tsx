@@ -1,11 +1,9 @@
 import { FC } from "react";
 import { Btn } from "../../ui";
 import { ReactComponent as CreateIcon } from '../../assets/icons/other/create-character-icon.svg'
-import { ReactComponent as ImportIcon } from '../../assets/icons/other/import-icon.svg'
-// import { IMain } from "./StartScreen.d";
-import styles from "./StartScreen.module.scss";
 import { useAppDispatch } from "../../redux/hooks";
 import { ModalName, openModal } from "../../redux/slices/modals";
+import styles from "./StartScreen.module.scss";
 
 const StartScreen: FC = () => {
   const dispatch = useAppDispatch();
@@ -17,15 +15,9 @@ const StartScreen: FC = () => {
           <Btn
             className={styles.btn}
             text={'Создать персонажа'}
+            onClick={() => dispatch(openModal(ModalName.CHARACTER_FORM))}
           >
             <CreateIcon width={16} height={16} />
-          </Btn>
-          <Btn
-            className={styles.btn}
-            text={'Загрузить персонажа'}
-            onClick={() => dispatch(openModal(ModalName.IMPORT))}
-          >
-            <ImportIcon width={16} height={16} />
           </Btn>
         </div>
       </div>

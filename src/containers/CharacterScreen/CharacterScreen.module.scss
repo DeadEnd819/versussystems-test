@@ -1,9 +1,5 @@
 @import '../../styles/variables.scss';
 
-.characterScreen {
-
-}
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -60,6 +56,11 @@
   background-color: $color-default-white;
   border-radius: 8px;
   list-style: none;
+
+  &.maxWidth {
+    min-width: initial;
+    width: 100%;
+  }
 }
 
 .list + .parametersTitle {

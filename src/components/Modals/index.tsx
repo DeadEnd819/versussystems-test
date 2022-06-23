@@ -9,10 +9,9 @@ import {
   addAnimation
 } from '../../redux/slices/modals'
 import { Import } from "../../ui";
-import { CharacterForm } from "../index";
+import { CharacterForm, MessageModal } from "../index";
 import { Components, Content } from '../../interfaces/common.d'
 import './Modals.module.scss'
-
 
 const Modals: FC = () => {
   const modals = useAppSelector(modalStack);
@@ -22,6 +21,7 @@ const Modals: FC = () => {
   const modalComponents: Components<ModalName, Content> = {
     [ModalName.IMPORT]: <Import />,
     [ModalName.CHARACTER_FORM]: <CharacterForm />,
+    [ModalName.MESSAGE]: <MessageModal />
   } as const
 
   const handleModalClose = (modal: ModalName) => {
