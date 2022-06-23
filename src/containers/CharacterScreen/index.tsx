@@ -2,19 +2,15 @@ import { FC } from "react";
 import { ReactComponent as CharactertIcon } from '../../assets/icons/other/character-icon.svg'
 import { ReactComponent as PlusIcon } from '../../assets/icons/other/plus-icon.svg'
 import { ReactComponent as DamageIcon } from '../../assets/icons/other/damage-icon.svg'
-
 import { ReactComponent as ImportIcon } from '../../assets/icons/other/import-icon.svg'
 import { ReactComponent as ExportIcon } from '../../assets/icons/other/export-icon.svg'
-
 import { ReactComponent as StrengthIcon } from '../../assets/icons/basic-parameters/strength-icon.svg'
 import { ReactComponent as AgilityIcon } from '../../assets/icons/basic-parameters/agility-icon.svg'
 import { ReactComponent as IntelligenceIcon } from '../../assets/icons/basic-parameters/intelligence-icon.svg'
 import { ReactComponent as CharismahIcon } from '../../assets/icons/basic-parameters/charisma-icon.svg'
-
 import { ReactComponent as LifeForceIcon } from '../../assets/icons/extra-options/life-force-icon.svg'
 import { ReactComponent as EvasionIcon } from '../../assets/icons/extra-options/evasion-icon.svg'
 import { ReactComponent as EnergyIcon } from '../../assets/icons/extra-options/energy-icon.svg'
-
 import { ReactComponent as AppearanceIcon } from '../../assets/icons/skils/appearance-icon.svg'
 import { ReactComponent as ArcheryIcon } from '../../assets/icons/skils/archery-icon.svg'
 import { ReactComponent as AttackIcon } from '../../assets/icons/skils/attack-icon.svg'
@@ -29,8 +25,12 @@ import { ReactComponent as SurvivalIcon } from '../../assets/icons/skils/surviva
 import styles from "./CharacterScreen.module.scss";
 import { Btn } from "../../ui";
 import cx from "classnames";
+import { ModalName, openModal } from "../../redux/slices/modals";
+import { useAppDispatch } from "../../redux/hooks";
 
 const CharacterScreen: FC = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <section className={styles.characterScreen}>
       <div className="container">
@@ -83,7 +83,11 @@ const CharacterScreen: FC = () => {
 
             <div className={styles.col}>
               <div className={styles.buttons}>
-                <Btn className={cx(styles.btn, styles.btnDamage)} text={'Редактировать'}>
+                <Btn
+                  className={cx(styles.btn, styles.btnDamage)}
+                  text={'Редактировать'}
+                  onClick={() => dispatch(openModal(ModalName.CHARACTER_FORM))}
+                >
                   <ExportIcon width={16} height={16} />
                 </Btn>
               </div>
@@ -100,7 +104,11 @@ const CharacterScreen: FC = () => {
                 <Btn className={cx(styles.btn, styles.btnDamage)} text={'Сохранить'}>
                   <ExportIcon width={16} height={16} />
                 </Btn>
-                <Btn className={cx(styles.btn, styles.btnDamage)} text={'Загрузить'}>
+                <Btn
+                  className={cx(styles.btn, styles.btnDamage)}
+                  text={'Загрузить'}
+                  onClick={() => dispatch(openModal(ModalName.IMPORT))}
+                >
                   <ImportIcon width={16} height={16} />
                 </Btn>
               </div>
@@ -190,9 +198,6 @@ const CharacterScreen: FC = () => {
               </ul>
 
             </div>
-          </div>
-          <div className={styles.footer}>
-
           </div>
         </div>
       </div>

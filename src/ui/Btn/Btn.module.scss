@@ -16,7 +16,8 @@
   border: 2px solid $color-transparent;
   border-radius: 8px;
 
-  transition: border-color, background-color, color $trans-default;
+  transition: $trans-default;
+  transition-property: border-color, background-color, color;
   cursor: pointer;
 
   @media (hover: hover), screen and (min-width: 0\0) {
@@ -51,7 +52,16 @@
   @media (hover: hover), screen and (min-width: 0\0) {
     &:hover,
     &:focus {
-      color: $color-black-russian;
+      color: $color-fringy-flower;
     }
   }
+}
+
+.isTransparent {
+  width: 100%;
+  padding: 6px 50px 8px;
+  color: $color-black-russian;
+  background-color: $color-transparent;
+  border: 1px solid rgba($color-black-russian, 0.2);
+  border-radius: 8px;
 }
