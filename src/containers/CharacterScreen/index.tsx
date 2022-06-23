@@ -1,7 +1,7 @@
 import { FC } from "react";
 import cx from "classnames";
 import { Btn } from "../../ui";
-import { ModalName, openModal } from "../../redux/slices/modals";
+import { addMessageFromModal, ModalName, openModal } from "../../redux/slices/modals";
 import { addDamage, addLevelSkill } from "../../redux/slices/character";
 import { currentCharacter, IParameters, ISkills } from "../../redux/slices/character";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -29,11 +29,14 @@ const CharacterScreen: FC = () => {
     const isInStack = !!stack.find((character) => character.name === name);
 
     if (isInStack){
+      dispatch(addMessageFromModal('Персонаж с таким именем уже существует!'));
       dispatch(openModal(ModalName.MESSAGE));
       return;
     }
 
-    dispatch(exportCharacter(character))
+    dispatch(exportCharacter(character));
+    dispatch(addMessageFromModal('Персонаж успешно сохранён!'));
+    dispatch(openModal(ModalName.MESSAGE));
   }
 
   return (

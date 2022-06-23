@@ -10,11 +10,13 @@ export enum ModalName {
 export interface ModalsState {
   modalStack: ModalName[]
   modalForAnimation: ModalName | null
+  message: string
 }
 
 const initialState: ModalsState = {
   modalStack: [] as ModalName[],
-  modalForAnimation: null
+  modalForAnimation: null,
+  message: '',
 }
 
 export const modalsSlice = createSlice({
@@ -28,16 +30,16 @@ export const modalsSlice = createSlice({
       state.modalStack = state.modalStack.filter((modal) => modal !== action.payload);
       state.modalForAnimation = null;
     },
-    closeAll: (state) => {
-      state.modalStack = [];
-    },
     addAnimation: (state, action) => {
       state.modalForAnimation = action.payload;
     },
+    addMessageFromModal: (state, { payload }) => {
+      state.message = payload;
+    }
   }
 })
 
-export const { openModal, closeModal, closeAll, addAnimation } = modalsSlice.actions
+export const { openModal, closeModal, addMessageFromModal, addAnimation } = modalsSlice.actions
 
 export const modalStack = createSelector(
   (state: RootState) => state.modals,
@@ -47,6 +49,11 @@ export const modalStack = createSelector(
 export const modalForAnimation = createSelector(
   (state: RootState) => state.modals,
   (modals) => modals.modalForAnimation
+)
+
+export const messageFromModal = createSelector(
+  (state: RootState) => state.modals,
+  (modals) => modals.message
 )
 
 export default modalsSlice.reducer
