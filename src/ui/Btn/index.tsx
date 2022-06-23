@@ -1,11 +1,30 @@
 import { FC } from "react";
-// import { IBtn } from "./Btn.d";
-// import styles from "./Btn.module.scss";
+import cx from "classnames";
+import { IBtn } from "./Btn.d";
+import styles from "./Btn.module.scss";
 
-const Btn: FC = () => {
+const Btn: FC<IBtn> = ({
+  className,
+  type= 'button',
+  text,
+  isIcon = false,
+  children
+}) => {
+  const btnClassName = cx(
+    styles.btn,
+    {
+      [className as string]: className,
+      [styles.isIcon]: isIcon
+    }
+  );
+
   return (
-    <button type={'button'}>
-      Кнопка
+    <button
+      className={btnClassName}
+      type={type}
+    >
+      { text }
+      { children }
     </button>
   );
 };

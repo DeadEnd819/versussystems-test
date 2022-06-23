@@ -1,1 +1,2 @@
-export { default as Main } from './Main'
+export { default as StartScreen } from './StartScreen'
+export { default as CharacterScreen } from './CharacterScreen'

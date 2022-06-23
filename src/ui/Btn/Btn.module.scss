@@ -1,0 +1,57 @@
+@import '../../styles/variables.scss';
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 15px 8px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.25;
+  letter-spacing: 0.15em;
+  color: $color-default-white;
+
+  background-color: $color-mariner;
+  border: 2px solid $color-transparent;
+  border-radius: 8px;
+
+  transition: border-color, background-color, color $trans-default;
+  cursor: pointer;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      background-color: $color-transparent;
+      color: $color-mariner;
+      border-color: $color-mariner;
+    }
+  }
+
+  svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    margin-left: 8px;
+  }
+}
+
+.isIcon {
+  display: flex;
+  padding: 0;
+  border: none;
+  color: $color-black-russian;
+  background-color: $color-transparent;
+
+  svg {
+    margin: 0;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      color: $color-black-russian;
+    }
+  }
+}

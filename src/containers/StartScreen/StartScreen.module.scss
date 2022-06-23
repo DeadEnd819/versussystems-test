@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.startScreen {
+
+}
+
+.wrapper {
+  .btn {
+    margin-right: 12px;
+
+    &:last-of-type{
+      margin-right: 0;
+    }
+  }
+}

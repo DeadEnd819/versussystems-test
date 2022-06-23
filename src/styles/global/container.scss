@@ -1,13 +1,14 @@
 @import '../variables';
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  max-width: 1920px;
+  max-width: 1400px;
   min-width: 320px;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 0 24px;
-
-  &--no-padding {
-    padding: 0;
-  }
 }

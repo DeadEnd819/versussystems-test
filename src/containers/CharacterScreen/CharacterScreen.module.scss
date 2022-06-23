@@ -1,0 +1,117 @@
+@import '../../styles/variables.scss';
+
+.characterScreen {
+
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 720px;
+  padding: 30px;
+
+  background-color: $color-fringy-flower;
+  border-radius: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.col {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.name {
+  display: inline-block;
+  vertical-align: baseline;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.parametersTitle {
+  display: inline-block;
+  vertical-align: center;
+  margin-bottom: 8px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.15em;
+}
+
+.list {
+  min-width: 60%;
+  margin: 0;
+  padding: 15px 15px 20px;
+
+  background-color: $color-default-white;
+  border-radius: 8px;
+  list-style: none;
+}
+
+.list + .parametersTitle {
+  margin-top: 25px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+
+  border-bottom: 1px solid rgba($color-black-russian, 0.2);
+
+  svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    margin-right: 8px;
+  }
+}
+
+.parameter {
+  font-weight: 700;
+
+  margin-right: 18px;
+}
+
+.value {
+  font-weight: 700;
+
+  margin-left: auto;
+}
+
+.btnSkill {
+  margin-top: 3px;
+  margin-left: 8px;
+
+  svg {
+    margin: 0;
+  }
+}
+
+.btnDamage {
+  margin-top: 25px;
+}
+
+.buttons {
+  position: absolute;
+  top: 0;
+
+  .btn + .btn {
+    margin-left: 12px;
+  }
+}
